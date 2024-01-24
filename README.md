@@ -56,8 +56,8 @@ If you want to learn more about this project or have any questions, send me an e
   Create your google gemini key, twillio account sid and auth token.
   Also Create the NOTION_ACCESS_TOKEN .
 
-5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content
-   go to `where can I find my page id`, and follow the steps from there
+5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content,
+   and follow the steps from there to create the page_id
    All the notes you will take on the whatsapp will get appended as pages to the page whose page_id you would set as NOTION_PAGE_ID.
 
 6. Run the server
@@ -68,9 +68,14 @@ If you want to learn more about this project or have any questions, send me an e
     or you can use the ```sh
     npm start
    ```
-6.Install ngork from https://ngrok.com/docs/getting-started/
+7.Install ngork from https://ngrok.com/docs/getting-started/
 
-7. Open another Terminal and run
+8. Open another Terminal and run
    `ngrok http 3000`
     copy the link for the locally hosted server and paste in the twilio app 
     Open Your App> Develop > Messaging > Try It Ouy > Send a Whatsapp message > Go to the sandbox settings > paste the link on the demolink space
+
+
+
+Currently notion api doesn't support uploading files and media
+https://developers.notion.com/docs/working-with-files-and-media#uploading-files-and-media-via-the-notion-api
