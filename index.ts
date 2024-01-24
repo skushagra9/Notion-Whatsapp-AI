@@ -6,6 +6,7 @@ import { Client } from '@notionhq/client';
 
 const notion_client = new Client({ auth: process.env.NOTION_ACCESS_TOKEN });
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+const pageID = process.env.NOTION_PAGE_ID
 
 const app = express();
 app.use(express.json());
@@ -15,35 +16,21 @@ const port = 3000;
 // const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 
 async function createNotionPage(message:string) {
-    try {
-        const response = await notion_client.pages.create({
-            
-            parent: {
-                type: "page_id",
-                page_id: process.env.NOTION_PAGE_ID!
-            },
-            properties: {
-                Name: {
-                    title: [
-                        {
-                            text: {
-                                content: message
-                            }
-                        }
-                    ]
-                },
-            }
-            
-        });
-
-        console.log(response);
-    } catch (error) {
-        console.error("Error creating Notion page:", error);
-    }
+  try {
+    const response = await notion_client.pages.create({
+      parent: { "page_id": pageID! },
+      "properties": {
+        "title": {
+          "title": [{ "type": "text", "text": { "content": message } }]
+        }
+      }
+    });
+    console.log("Page created successfully:");
+  } catch (error) {
+    console.error("Error creating page:",error);
+  }
+  
 }
-
-
-
 
 async function handleTextMessage(message: string) {
     console.log("Received text message:", message);
