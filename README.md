@@ -58,7 +58,7 @@ If you want to learn more about this project or have any questions, send me an e
 
 5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content
    go to `where can I find my page id`, and follow the steps from there
-   All the notes you will take on the whatsapp will get appended to the page whose page_id you would set as NOTION_PAGE_ID.
+   All the notes you will take on the whatsapp will get appended as pages to the page whose page_id you would set as NOTION_PAGE_ID.
 
 6. Run the server
    ```sh
