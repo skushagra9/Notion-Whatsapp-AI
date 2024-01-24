@@ -65,7 +65,8 @@ If you want to learn more about this project or have any questions, send me an e
     yarn tsc
     node dist/index.js
    ```
-    or you can use the ```sh
+    or you can use the
+    ```sh
     npm start
    ```
 7.Install ngork from https://ngrok.com/docs/getting-started/
