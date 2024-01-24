@@ -15,7 +15,6 @@ async function handleTextMessage(message: string) {
 
     // logic to handle text messages here
     const description = await generateAiContext(message)
-    sendTextMessage("Succesfully received your text message");
     await createNotionPage(message, description);
     sendTextMessage("Synced it to notion and Generated AI content");
     
@@ -27,7 +26,6 @@ export async function handleImageMessage(mediaUrl: string) {
 
   // logic to handle image messages here
   const description = await generateAiContext(mediaUrl)
-    sendTextMessage("Succesfully received your text message");
     await createNotionPage(mediaUrl, description);
     sendTextMessage("Synced it to notion and Generated AI content");
 
