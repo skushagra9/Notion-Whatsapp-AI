@@ -57,7 +57,7 @@ If you want to learn more about this project or have any questions, send me an e
   Also Create the NOTION_ACCESS_TOKEN .
 
 5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content,
-   and follow the steps from there to create the page_id
+   and follow the steps from there to create the page_id and give permissions.
    All the notes you will take on the whatsapp will get appended as pages to the page whose page_id you would set as NOTION_PAGE_ID.
 
 6. Run the server
