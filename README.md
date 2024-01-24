@@ -21,9 +21,10 @@ If you want to learn more about this project or have any questions, send me an e
 
 ## Built with 🛠️
 
-- [TypeScript]
-- [Gemini]
-- [Twilio]
+- TypeScript
+- Gemini
+- Twilio
+- Notion API
 
 
 ## Getting Started 🚀
@@ -53,11 +54,19 @@ If you want to learn more about this project or have any questions, send me an e
 
 4. Setup the env Variables 
   Create your google gemini key, twillio account sid and auth token.
+  Also Create the NOTION_ACCESS_TOKEN .
 
-5. Run the server
+5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content
+   go to `where can I find my page id`, and follow the steps from there
+   All the notes you will take on the whatsapp will get appended to the page whose page_id you would set as NOTION_PAGE_ID.
+
+6. Run the server
    ```sh
     yarn tsc
     node dist/index.js
+   ```
+    or you can use the ```sh
+    npm start
    ```
 6.Install ngork from https://ngrok.com/docs/getting-started/
 
