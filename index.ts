@@ -10,32 +10,32 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const port = 3000;
     
-const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
+// const genAI = new GoogleGenerativeAI(process.env.API_KEY!);
 
-async function run(message:string) {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+// async function run(message:string) {
+//     const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-    const prompt = message
+//     const prompt = message
   
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    console.log(text);
-  client.messages
-    .create({
-        body: text,
-        from: process.env.MY_TWILIO_NUM,
-        to: process.env.MY_PERSONAL_NUM!
-    })
+//     const result = await model.generateContent(prompt);
+//     const response = await result.response;
+//     const text = response.text();
+//     console.log(text);
+//   client.messages
+//     .create({
+//         body: text,
+//         from: process.env.MY_TWILIO_NUM,
+//         to: process.env.MY_PERSONAL_NUM!
+//     })
    
-}
+// }
 
 
 app.post('/', async (req, res) => {
     const { body } = req;
     const message = body.Body;
-    console.log(body)
-    run(message)
+    console.log(message)
+    // run(message)
     
  });
 
