@@ -3,6 +3,7 @@ import express from "express";
 import 'dotenv/config';
 import { createNotionPage } from './notion';
 import { sendTextMessage } from './twilio';
+import {generateAiContext} from './gemini'
 
 const app = express();
 app.use(express.json());
@@ -13,16 +14,23 @@ async function handleTextMessage(message: string) {
     console.log("Received text message:", message);
 
     // logic to handle text messages here
-    await createNotionPage(message);
-    await sendTextMessage("Succesfully received your text message");
+    const description = await generateAiContext(message)
+    sendTextMessage("Succesfully received your text message");
+    await createNotionPage(message, description);
+    sendTextMessage("Synced it to notion and Generated AI content");
+    
+    
 }
 
 export async function handleImageMessage(mediaUrl: string) {
   console.log("Received image message. Media URL:", mediaUrl);
 
   // logic to handle image messages here
-  await createNotionPage(mediaUrl);
-  await sendTextMessage("Successfully received your image");
+  const description = await generateAiContext(mediaUrl)
+    sendTextMessage("Succesfully received your text message");
+    await createNotionPage(mediaUrl, description);
+    sendTextMessage("Synced it to notion and Generated AI content");
+
 }
 
 app.post('/', async (req, res) => {
