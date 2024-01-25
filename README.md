@@ -58,7 +58,7 @@ If you want to learn more about this project or have any questions, send me an e
   Useful links:
   Notion API - https://developers.notion.com/docs/create-a-notion-integration
   Twilio API - https://www.twilio.com/en-us
-  Gemini - https://deepmind.google/technologies/gemini/#introduction
+  Gemini - https://ai.google.dev/
 
 5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content,
    and follow the steps from there to create the page_id and give permissions.
