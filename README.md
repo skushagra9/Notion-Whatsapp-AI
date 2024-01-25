@@ -23,6 +23,7 @@ If you want to learn more about this project or have any questions, send me an e
 
 - TypeScript
 - Gemini
+- Langchain
 - Twilio
 - Notion API
 
