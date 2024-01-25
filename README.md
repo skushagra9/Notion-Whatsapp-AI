@@ -55,6 +55,10 @@ If you want to learn more about this project or have any questions, send me an e
 4. Setup the env Variables 
   Create your google gemini key, twillio account sid and auth token.
   Also Create the NOTION_ACCESS_TOKEN .
+  Useful links:
+  Notion API - https://developers.notion.com/docs/create-a-notion-integration
+  Twilio API - https://www.twilio.com/en-us
+  Gemini - https://deepmind.google/technologies/gemini/#introduction
 
 5. Now for NOTION_PAGE_ID, go to https://developers.notion.com/docs/working-with-page-content#creating-a-page-with-content,
    and follow the steps from there to create the page_id and give permissions.
