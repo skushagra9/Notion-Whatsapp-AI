@@ -25,6 +25,5 @@ const pageID = process.env.NOTION_PAGE_ID;
       console.log("Page created successfully:");
     } catch (error) {
       console.error("Error creating page:",error);
-    }
-    
+    }  
   }
