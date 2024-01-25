@@ -12,10 +12,19 @@ const port = 3000;
 
 async function handleTextMessage(message: string) {
     console.log("Received text message:", message);
-
+   
     // logic to handle text messages here
     const description = await generateAiContext(message)
-    await createNotionPage(message, description);
+    // This approach creates 2 pages with the same title
+  //   if (description.length > 2000) {
+  //     for (let i = 0; i < description.length; i += 2000) {
+  //         let chunk = description.substring(i, i + 2000);
+  //         await createNotionPage(message, chunk);
+  //     }
+  // }else{
+  //   await createNotionPage(message, description);
+  // }
+    await createNotionPage(message, description.substring(0,2000));
     sendTextMessage("Synced it to notion and Generated AI content");
     
     
@@ -26,8 +35,18 @@ export async function handleImageMessage(mediaUrl: string) {
 
   // logic to handle image messages here
   const description = await generateAiContext(mediaUrl)
-    await createNotionPage(mediaUrl, description);
-    sendTextMessage("Synced it to notion and Generated AI content");
+  
+// This approach creates 2 pages with the same title
+//   if (description.length > 2000) {
+//     for (let i = 0; i < description.length; i += 2000) {
+//         let chunk = description.substring(i, i + 2000);
+//         await createNotionPage(mediaUrl, chunk);
+//     }
+// }else{
+//   await createNotionPage(mediaUrl, description);
+// }
+  await createNotionPage(mediaUrl, description.substring(0,2000));
+  sendTextMessage("Synced it to notion and Generated AI content");
 
 }
 
