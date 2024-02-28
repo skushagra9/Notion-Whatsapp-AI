@@ -27,6 +27,10 @@ If you want to learn more about this project or have any questions, send me an e
 - Twilio
 - Notion API
 
+## Demo
+
+https://github.com/skushagra9/Notion-Whatsapp-AI/assets/120712705/bc584da5-b1af-47b9-89c0-287532ccb8e8
+
 
 ## Getting Started 🚀
 
